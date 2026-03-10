@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Cognito Auth Sample App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.3.12/dist/amazon-cognito-identity.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <main class="card" id="auth-view">
+        <h1>Welcome</h1>
+        <p class="subtitle">Sign in with your AWS Cognito user pool account.</p>
+
+        <form id="login-form" class="stack">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" required />
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required />
+
+          <button type="submit">Login</button>
+          <p id="auth-message" class="message"></p>
+        </form>
+      </main>
+
+      <div id="landing-view" class="hidden">
+        <header class="topbar">
+          <div class="brand">Cognito Demo App</div>
+          <nav class="horizontal-menu" aria-label="Horizontal menu">
+            <a href="#">Dashboard</a>
+            <a href="#">Reports</a>
+            <a href="#">Billing</a>
+            <a href="#">Support</a>
+          </nav>
+          <button id="logout-btn" class="logout">Logout</button>
+        </header>
+
+        <div class="layout">
+          <aside class="sidebar" aria-label="Vertical menu">
+            <h2>Navigation</h2>
+            <ul class="vertical-menu">
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Account Settings</a></li>
+              <li><a href="#">Notifications</a></li>
+              <li><a href="#">Integrations</a></li>
+              <li><a href="#">Audit Logs</a></li>
+            </ul>
+          </aside>
+
+          <section class="content">
+            <h1>Hello, <span id="display-name">User</span> 👋</h1>
+            <p>You are authenticated with your AWS Cognito User Pool.</p>
+            <div class="tile-grid">
+              <article class="tile">Quick Action 1</article>
+              <article class="tile">Quick Action 2</article>
+              <article class="tile">Quick Action 3</article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
